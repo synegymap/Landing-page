@@ -1,0 +1,165 @@
+<nav class="nav">
+  <div class="nav-content">
+    <div>
+      <div class="logo">CoCreationMap</div>
+      <div class="promo-text">Junte-se até 31 de Março • 1 Ano Grátis</div>
+    </div>
+    <button class="nav-btn" (click)="scrollToForm()">Junte-se Agora</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="beta-badge">🚀 Junte-se até 31 de Março • 1 Ano Grátis</div>
+      <h1>Não esteja sozinho. <span class="highlight">Crie novas fontes de receita.</span></h1>
+      <p>O CoCreationMap é o mapa de proximidade que liga empresas vizinhas para facilitar o chat direto e a cocriação de negócios. Descubra quem está ao seu lado e transforme proximidade em oportunidade.</p>
+    </div>
+
+    <div class="hero-form" id="registerForm">
+      <h3>Coloque a sua empresa no mapa</h3>
+      <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+          <label for="company">Nome da Empresa</label>
+          <input type="text" id="company" formControlName="company" placeholder="A sua empresa" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Profissional</label>
+          <input type="email" id="email" formControlName="email" placeholder="seuemail@empresa.pt" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Morada da Empresa</label>
+          <input type="text" id="address" formControlName="address" placeholder="Rua, Número, Código Postal, Cidade" required>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="gdpr" formControlName="gdpr">
+            <span class="checkbox-text">Li e aceito a <a href="#" class="privacy-link">Política de Privacidade</a> e autorizo o tratamento dos meus dados pessoais de acordo com o RGPD.</span>
+          </label>
+        </div>
+        <button type="submit" class="cta-button" [disabled]="loading">Registar Agora - É Grátis</button>
+      </form>
+
+      <p *ngIf="success" class="success">Obrigado! Entraremos em contacto em breve.</p>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </div>
+  </div>
+
+  <div class="map-visual">
+    <div class="map-container">
+      <div class="map-label">PORTO</div>
+      <div class="map-grid"></div>
+
+      <div class="map-street street-h1"></div>
+      <div class="map-street street-h2"></div>
+      <div class="map-street street-h3"></div>
+      <div class="map-street street-v1"></div>
+      <div class="map-street street-v2"></div>
+      <div class="map-street street-v3"></div>
+
+      <div class="map-building building1"></div>
+      <div class="map-building building2"></div>
+      <div class="map-building building3"></div>
+      <div class="map-building building4"></div>
+      <div class="map-building building5"></div>
+      <div class="map-building building6"></div>
+      <div class="map-building building7"></div>
+
+      <div class="map-pin pin1"></div>
+      <div class="map-pin pin2"></div>
+      <div class="map-pin pin3"></div>
+      <div class="map-pin pin4"></div>
+      <div class="map-pin pin5"></div>
+      <div class="map-pin pin6"></div>
+      <div class="map-pin pin7"></div>
+
+      <div class="map-river"></div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <h2 class="section-title">Como Funciona</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Localize</h3>
+        <p>Coloque a sua empresa no mapa e descubra instantaneamente quais negócios estão à sua volta.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Converse</h3>
+        <p>Inicie conversas diretas através do chat integrado.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Co-crie</h3>
+        <p>Desenvolva parcerias estratégicas e lance novos produtos ou serviços em conjunto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <h2 class="section-title">Porquê o CoCreationMap?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>Reduza Custos Operacionais</h3>
+        <p>Partilhe fornecedores, logística e recursos com empresas próximas.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Expanda a Sua Rede de Contactos</h3>
+        <p>Construa uma rede de negócios sólida na sua zona.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚀</div>
+        <h3>Novos Fluxos de Receita</h3>
+        <p>Identifique oportunidades de cross-selling e novos mercados através da cocriação.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Velocidade e Eficiência</h3>
+        <p>Chat direto, decisões rápidas e parcerias que acontecem de verdade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rewards">
+  <div class="container">
+    <h2 class="section-title">Recompensas Exclusivas para Pioneiros</h2>
+    <p class="rewards-subtitle">Registe-se agora e receba benefícios únicos.</p>
+    <div class="rewards-grid">
+      <div class="reward-card">
+        <div class="reward-number">1</div>
+        <h3>Estatuto de "Empresa Pioneira"</h3>
+        <ul class="reward-details">
+          <li>Selo exclusivo no perfil</li>
+          <li>Visibilidade destacada no mapa</li>
+          <li>Reconhecimento como fundador</li>
+        </ul>
+      </div>
+      <div class="reward-card">
+        <div class="reward-number">2</div>
+        <h3>Acesso Vitalício Gratuito</h3>
+        <ul class="reward-details">
+          <li>Mensagens ilimitadas</li>
+          <li>Funcionalidades avançadas grátis</li>
+          <li>Nunca pague por este plano</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Pronto para Criar Sinergia?</h2>
+    <p>Transforme proximidade em oportunidade e crie novas fontes de receita.</p>
+    <button class="final-cta-button" (click)="scrollToForm()">Coloque a Sua Empresa no Mapa</button>
+  </div>
+</section>
